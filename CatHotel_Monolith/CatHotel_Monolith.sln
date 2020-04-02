@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatHotel_Monolith", "CatHotel_Monolith.csproj", "{CD3E0CD4-3619-46E7-A854-92116E0BC796}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9066DA4B-C0CF-472D-8DE7-21EDAC4281BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD3E0CD4-3619-46E7-A854-92116E0BC796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3E0CD4-3619-46E7-A854-92116E0BC796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3E0CD4-3619-46E7-A854-92116E0BC796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3E0CD4-3619-46E7-A854-92116E0BC796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9066DA4B-C0CF-472D-8DE7-21EDAC4281BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9066DA4B-C0CF-472D-8DE7-21EDAC4281BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9066DA4B-C0CF-472D-8DE7-21EDAC4281BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9066DA4B-C0CF-472D-8DE7-21EDAC4281BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3203C0C3-A19C-48FC-BC80-D1A602F521D9}
+	EndGlobalSection
+EndGlobal

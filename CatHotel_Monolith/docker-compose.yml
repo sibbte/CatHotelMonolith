@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  ms-sql-server:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+       ACCEPT_EULA: "Y"
+       SA_PASSWORD: "StronPassword???"
+       MSSQL_PID: Express
+    ports:
+       - "1433:1433"
+
+  cathotel_monolith:
+    image: ${DOCKER_REGISTRY-}cathotelmonolith
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"

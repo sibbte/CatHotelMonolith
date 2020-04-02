@@ -1,0 +1,20 @@
+﻿using CatHotel_Monolith.Models;
+using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace CatHotel_Monolith.Validators
+{
+    public class RoomValidator : AbstractValidator<Room>
+    {
+        public RoomValidator()
+        {
+            RuleFor(x => x.RoomNo).NotEmpty().NotEqual(0).LessThan(10).WithMessage(room => $"Only rooms number 1-9 exsist, {room.RoomNo} doesnt exsist.");
+            //RuleFor(x => x.RoomType).NotEmpty().WithMessage("Room type cant be empty, but be either standard or family room");
+            RuleFor(x => x.MaxNoOfCatsInRoom).NotNull().LessThan(5).NotEqual(0).WithMessage(room => $"The Minimum Number of cats per room is 1 and the maximum is 4. {room.MaxNoOfCatsInRoom} is a invalid number to choose");
+            RuleFor(x => x.UserId).NotEmpty().WithMessage("Users Details must be provided");
+        }
+    }
+}

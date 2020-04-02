@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  cathotel_monolith:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
