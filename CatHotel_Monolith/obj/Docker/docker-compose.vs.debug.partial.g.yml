@@ -3,7 +3,7 @@ version: '3.4'
 services:
   cathotel_monolith:
     image: cathotelmonolith:dev
-    container_name: CatHotel_Monolith_1
+    container_name: CatHotel_Monolith
     build:
       target: base
       labels:

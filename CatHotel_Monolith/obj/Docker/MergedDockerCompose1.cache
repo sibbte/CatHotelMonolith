@@ -23,6 +23,8 @@ services:
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     ports:
+    - published: 8080
+      target: 80
     - target: 80
     tty: true
     volumes:
@@ -33,4 +35,13 @@ services:
     - C:\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages:ro
     - C:\Users\sibbt\.nuget\packages:/root/.nuget/packages:ro
     - D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith:/src:rw
+  ms-sql-server:
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      SA_PASSWORD: StronPassword???
+    image: mcr.microsoft.com/mssql/server
+    ports:
+    - published: 1433
+      target: 1433
 version: '3.4'
