@@ -1,4 +1,5 @@
 ﻿using CatHotel_Monolith.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -34,7 +35,8 @@ namespace CatHotel_Monolith.Managers
         }
         public IEnumerable<Booking> GetAllBookings()
         {
-            return _context.Bookings.OrderBy(x => x.StartDate).ToList();
+            
+            return _context.Bookings.Include(c => c.Cats).Include(c => c.Customer).Include(c => c.Room).AsNoTracking().OrderBy(x => x.StartDate).ToList();
         }
         public void Delete(Guid id)
         {

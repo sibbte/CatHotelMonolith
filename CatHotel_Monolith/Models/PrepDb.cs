@@ -24,31 +24,64 @@ namespace CatHotel_Monolith.Models
             System.Console.WriteLine("Appling Migrations...");
 
             context.Database.Migrate();
+            Room room = new Room() 
+            {
+                Available = false,
+                Booked = false,
+                BookingEnd = DateTime.Now,
+                BookingStart = DateTime.Now,
+                CheckedIn = false,
+                CheckedOut = false,
+                RoomType = Enum.RoomType.FamilyRoom,
+                MaxNoOfCatsInRoom = 4,
+                RoomNo = 1,
+                UserId = "system"
+            };
+
+            
+
+            Customer customer = new Customer()
+            {
+                FirstName = "test",
+                LastName = "test",
+                Address1 = "the street",
+                Address2 = "the area",
+                Town = "the town",
+                Postcode = "BL1 5GF",
+                Email = "test@test.com",
+                MobNumber = "07456987456",
+                TeleNumber = "01478541236",
+                Cats = 0,
+                UserId = "system"
+                
+            };
+            
+
 
             if (!context.Rooms.Any())
             {
-                System.Console.WriteLine("Seeding Data...");
-                context.Rooms.Add(
-                    new Room()
-                    {
-                        Available = false,
-                        Booked = false,
-                        BookingEnd = DateTime.Now,
-                        BookingStart = DateTime.Now,
-                        CheckedIn = false,
-                        CheckedOut = false,
-                        RoomType = Enum.RoomType.FamilyRoom,
-                        MaxNoOfCatsInRoom = 4,
-                        RoomNo = 1,
-                        UserId = "system",
-                        ID = Guid.NewGuid()
-                    }
-                    );
+                System.Console.WriteLine("Seeding Room Data...");
+                context.Rooms.Add(room);
+                System.Console.WriteLine("Seeding Customer Data...");
+                context.Customers.Add(customer);
+
                 context.SaveChanges();
             }
             else
             {
-                System.Console.WriteLine("Already have data - not seeding");
+                System.Console.WriteLine("Already have data Room - not seeding");
+            }
+
+            if (!context.Customers.Any())
+            {
+                System.Console.WriteLine("Seeding Customer Data...");
+                context.Customers.Add(customer);
+
+                context.SaveChanges();
+            }
+            else
+            {
+                System.Console.WriteLine("Already have data Customers - not seeding");
             }
         }
     }

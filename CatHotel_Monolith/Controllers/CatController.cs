@@ -79,7 +79,7 @@ namespace CatHotel_Monolith.Controllers
             }
         }
 
-        /*//GET: Api/Cat/GetCatOwnerByFirstName
+        //GET: Api/Cat/GetCatOwnerByFirstName
         [HttpGet]
         [Route("Api/Cat/GetCatOwnerByFirstName")]
         public IEnumerable<Cat> GetCatCatOwnerByFirstName(string customer)
@@ -172,7 +172,7 @@ namespace CatHotel_Monolith.Controllers
                 throw new DataException($"Cant Search For '{postCode}'.");
             }
 
-        }*/
+        }
 
         // POST: FuelType/Create
         [HttpPost]
@@ -211,11 +211,11 @@ namespace CatHotel_Monolith.Controllers
 
             return Ok(cat);
         }
-       /* // POST: FuelType/Edit/5
+        // POST: FuelType/Edit/5
         [HttpPost]
         [Route("Api/Cat/Edit")]
         public ActionResult Edit(Guid search, string TagID, bool Vaccination, DateTime DateOfLastVac, MealType MealType, string CatName, string CatLitter, string CatCharacter, string CatVetName,
-             string CatVetAddress1, string CatVetAddress2, string CatVetPostCode, string CatVetCity, string CatVetPhoneNo, string CatMedicalCondition, Guid owner, Users user)
+             string CatVetAddress1, string CatVetAddress2, string CatVetPostCode, string CatVetCity, string CatVetPhoneNo, string CatMedicalCondition, Guid owner, string user)
         {
             Cat cat = new Cat()
             {
@@ -234,7 +234,7 @@ namespace CatHotel_Monolith.Controllers
                 CatVetPhoneNo = CatVetPhoneNo.Trim(),
                 CatMedicalCondition = null,
                 Customer = customerManager.Find(owner),
-                //User = user
+                UserId = user
             };
             ValidationResult result = validator.Validate(cat);
             ;
@@ -248,11 +248,11 @@ namespace CatHotel_Monolith.Controllers
             }
             else if (ModelState.IsValid)
             {
-                catManager.Update(cat, search);
+                catManager.Update(cat);
             }
 
             return Ok(cat);
-        }*/
+        }
 
         [HttpPost]
         [Route("Api/Cat/Delete")]

@@ -23,3 +23,7 @@ D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_impl
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\docker-compose.dcproj.CopyComplete
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\FluentValidation.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\Newtonsoft.Json.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\Newtonsoft.Json.Bson.dll

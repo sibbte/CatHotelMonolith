@@ -1,4 +1,5 @@
 ﻿using CatHotel_Monolith.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -38,7 +39,7 @@ namespace CatHotel_Monolith.Managers
 
         public IEnumerable<Customer> GetAllByName()
         {
-            return _context.Customers.OrderBy(x => x.FirstName).OrderBy(x => x.LastName).ToList();
+            return _context.Customers.Include(c => c.Cat).AsNoTracking().OrderBy(x => x.FirstName).OrderBy(x => x.LastName).ToList();
         }
 
         public IEnumerable<Customer> GetByFirstName(string name)

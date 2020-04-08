@@ -5,7 +5,7 @@ services:
     image: mcr.microsoft.com/mssql/server
     environment:
        ACCEPT_EULA: "Y"
-       SA_PASSWORD: "StronPassword???"
+       SA_PASSWORD: "StrongPassword???"
        MSSQL_PID: Express
     ports:
        - "1433:1433"

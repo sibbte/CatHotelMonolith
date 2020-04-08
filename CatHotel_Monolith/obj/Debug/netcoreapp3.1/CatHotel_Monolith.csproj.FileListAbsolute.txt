@@ -1,7 +1,6 @@
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\appsettings.json
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\netcoreapp3.1\CatHotel_Monolith.csprojAssemblyReference.cache
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\netcoreapp3.1\CatHotel_Monolith.AssemblyInfoInputs.cache
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\netcoreapp3.1\CatHotel_Monolith.AssemblyInfo.cs
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\netcoreapp3.1\CatHotel_Monolith.RazorTargetAssemblyInfo.cache
@@ -51,5 +50,10 @@ D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_impl
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\FluentValidation.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\netcoreapp3.1\CatHotel_Monolith.csprojAssemblyReference.cache
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\netcoreapp3.1\CatHotel_Monolith.csproj.CoreCompileInputs.cache
 D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith\obj\Debug\netcoreapp3.1\CatHotel_Monolith.MvcApplicationPartsAssemblyInfo.cache

@@ -30,7 +30,7 @@ namespace CatHotel_Monolith.Managers
             RuleFor(x => x.CatVetCity).NotEmpty().MaximumLength(50).WithMessage(cat => $"{cat.CatVetCity} is more than 50 characters. Please enter correct UK town.");
             RuleFor(x => x.CatVetPhoneNo).NotEmpty().Matches(telephoneRegex).WithMessage(cat => $"{cat.CatVetPhoneNo} is not a valid UK landline number.");
             //RuleFor(x => x.User).NotEmpty().WithMessage("Users Details must be provided");
-            RuleFor(x => x.Customer).NotEmpty().WithMessage("Cats owner must be added");
+            //RuleFor(x => x.Customer).NotEmpty().WithMessage("Cats owner must be added");
         }
     }
 }

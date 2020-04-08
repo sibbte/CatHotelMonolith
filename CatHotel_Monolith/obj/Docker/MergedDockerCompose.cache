@@ -14,7 +14,7 @@ services:
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_PID: Express
-      SA_PASSWORD: StronPassword???
+      SA_PASSWORD: StrongPassword???
     image: mcr.microsoft.com/mssql/server
     ports:
     - published: 1433

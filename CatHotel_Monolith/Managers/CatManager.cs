@@ -1,4 +1,5 @@
 ﻿using CatHotel_Monolith.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,7 +24,7 @@ namespace CatHotel_Monolith.Managers
 
         public IEnumerable<Cat> GetAllByName()
         {
-            return _context.Cats.OrderBy(x => x.CatName).ToList();
+            return _context.Cats.Include(c => c.Customer).AsNoTracking().OrderBy(x => x.CatName).ToList();
         }
 
         public void Update(Cat cat)
@@ -113,6 +114,7 @@ namespace CatHotel_Monolith.Managers
                 throw new DataException($"No Cats with the '{customer}'.");
             }
         }
+
         public IEnumerable<Cat> GetCatOwnerByFirstName(string name)
         {
             IList<Cat> result = new List<Cat>();
@@ -133,6 +135,8 @@ namespace CatHotel_Monolith.Managers
                 throw new DataException($"No Customer with the first name, '{name}' was found");
             }
         }
+
+
         public IEnumerable<Cat> GetCatOwnerByLastName(string name)
         {
             IList<Cat> result = new List<Cat>();
@@ -174,7 +178,7 @@ namespace CatHotel_Monolith.Managers
                 throw new DataException($"No Customer with the first name, '{name}' was found");
             }
         }
-        public IEnumerable<Cat> GetCatOwnerByteleNum(string teleNum)
+       public IEnumerable<Cat> GetCatOwnerByteleNum(string teleNum)
         {
             IList<Cat> result = new List<Cat>();
             var cat = GetAllByName().OrderBy(x => x.Customer.TeleNumber).ToList();

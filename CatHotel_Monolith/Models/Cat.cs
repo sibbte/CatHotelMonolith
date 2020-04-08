@@ -40,7 +40,7 @@ namespace CatHotel_Monolith.Models
         [Display(Name = "Cat's Medical Condition")]
         public string CatMedicalCondition { get; set; }
         public virtual Customer Customer { get; set; }
-        public virtual Booking Booking { get; set; }
+
         public bool? ChekedIn { get; set; }
         public bool? ChekedOut { get; set; }
         public string UserId { get; set; }
