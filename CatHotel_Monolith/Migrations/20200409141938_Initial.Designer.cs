@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CatHotel_Monolith.Migrations
 {
     [DbContext(typeof(CatContext))]
-    [Migration("20200406161103_Initial")]
+    [Migration("20200409141938_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -246,7 +246,7 @@ namespace CatHotel_Monolith.Migrations
                         .WithMany("Cats")
                         .HasForeignKey("BookingID");
 
-                    b.HasOne("CatHotel_Monolith.Models.Customer", null)
+                    b.HasOne("CatHotel_Monolith.Models.Customer", "Customer")
                         .WithMany("Cat")
                         .HasForeignKey("CustomerID");
                 });

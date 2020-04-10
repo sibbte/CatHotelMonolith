@@ -104,11 +104,11 @@ namespace CatHotel_Monolith.Migrations
                     CatVetCity = table.Column<string>(nullable: true),
                     CatVetPhoneNo = table.Column<string>(nullable: true),
                     CatMedicalCondition = table.Column<string>(nullable: true),
+                    CustomerID = table.Column<Guid>(nullable: true),
                     ChekedIn = table.Column<bool>(nullable: true),
                     ChekedOut = table.Column<bool>(nullable: true),
                     UserId = table.Column<string>(nullable: true),
-                    BookingID = table.Column<Guid>(nullable: true),
-                    CustomerID = table.Column<Guid>(nullable: true)
+                    BookingID = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {

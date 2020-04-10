@@ -32,6 +32,7 @@ namespace CatHotel_Monolith.Controllers
         [Route("Api/Room/GetAll")]
         public IEnumerable<Room> GetAll()
         {
+            System.Console.WriteLine("Api/Room/GetAll");
             return roomManager.GetAllRooms().OrderBy(x => x.RoomNo).ToList();
         }
 
@@ -53,6 +54,7 @@ namespace CatHotel_Monolith.Controllers
             }
             else
             {
+                System.Console.WriteLine("Room/GetAllByNumber");
                 return roomManager.GetAllByNumber().ToList();
             }
 

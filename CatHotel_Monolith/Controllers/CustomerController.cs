@@ -30,6 +30,7 @@ namespace CatHotel_Monolith.Controllers
         [Route("Api/Customer/GetAll")]
         public IEnumerable<Customer> GetCustomerList()
         {
+            System.Console.WriteLine("Api/Customer/GetAll");
             return customerManager.GetAllByName().ToList();
         }
 

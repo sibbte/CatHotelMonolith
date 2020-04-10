@@ -33,6 +33,7 @@ namespace CatHotel_Monolith.Controllers
         [Route("Index")]
         public IEnumerable<Booking> Index()
         {
+            System.Console.WriteLine("Index");
             return bookingManager.GetAllBookings();
         }
 

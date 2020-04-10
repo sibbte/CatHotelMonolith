@@ -32,6 +32,7 @@ namespace CatHotel_Monolith.Controllers
         [Route("Api/Cat/GetAll")]
         public IEnumerable<Cat> GetCatList()
         {
+            System.Console.WriteLine("Api/Cat/GetAll");
             return catManager.GetAllByName().ToList();
         }
 
