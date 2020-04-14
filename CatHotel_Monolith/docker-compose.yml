@@ -8,7 +8,7 @@ services:
        SA_PASSWORD: "StrongPassword???"
        MSSQL_PID: Express
     ports:
-       - "1433:1433"
+       - 1433
 
   cathotel_monolith:
     image: ${DOCKER_REGISTRY-}cathotelmonolith
@@ -16,4 +16,13 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - 8080
+
+  proxy:
+    image: dockercloud/haproxy
+    ports: 
+      - "80:80"
+    links: 
+      - cathotel_monolith
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
