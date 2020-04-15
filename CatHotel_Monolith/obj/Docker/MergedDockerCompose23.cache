@@ -1,0 +1,45 @@
+services:
+  cathotel_monolith:
+    build:
+      context: D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith
+      dockerfile: Dockerfile
+    container_name: cathotel_monolith
+    deploy:
+      mode: replicated
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+        window: 120s
+      update_config:
+        delay: 10s
+        parallelism: 5
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: cathotelmonolith
+    ports:
+    - target: 80
+  ms-sql-server:
+    container_name: ms-sql-server
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      SA_PASSWORD: StrongPassword???
+    image: mcr.microsoft.com/mssql/server
+    ports:
+    - target: 1433
+  proxy:
+    container_name: haproxy
+    deploy:
+      placement:
+        constraints:
+        - node.role == manager
+    environment:
+      BALANCE: leastconn
+    image: dockercloud/haproxy
+    ports:
+    - published: 80
+      target: 80
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:rw
+version: '3.4'

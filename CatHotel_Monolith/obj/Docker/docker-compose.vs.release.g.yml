@@ -2,7 +2,6 @@ version: '3.4'
 
 services:
   cathotel_monolith:
-    container_name: CatHotel_Monolith
     build:
       labels:
         com.microsoft.created-by: "visual-studio"

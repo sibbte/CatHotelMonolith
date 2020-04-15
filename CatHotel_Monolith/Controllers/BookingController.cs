@@ -78,7 +78,7 @@ namespace CatHotel_Monolith.Controllers
 
 
         }
-        /*// POST: Booking/Edit/5
+        // POST: Booking/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Booking booking)
@@ -86,18 +86,17 @@ namespace CatHotel_Monolith.Controllers
             if (ModelState.IsValid)
             {
                 bookingManager.Update(booking);
-                return RedirectToAction("Index");
             }
-            return View(booking);
-        }*/
+            return Ok(booking);
+        }
 
-        /*// POST: Booking/Delete/5
+        // POST: Booking/Delete/5
         [HttpDelete]
         [Route("Api/Booking/Delete")]
         public ActionResult Delete(Guid id)
         {
             bookingManager.Delete(id);
             return Ok();
-        }*/
+        }
     }
 }
