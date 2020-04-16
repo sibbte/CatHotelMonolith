@@ -10,6 +10,8 @@ services:
     ports:
        - "1433:1433"
     container_name: "ms-sql-server"
+    networks:
+      - web
 
   cathotel_monolith:
     image: ${DOCKER_REGISTRY-}cathotelmonolith
@@ -18,14 +20,36 @@ services:
       dockerfile: Dockerfile
     ports:
       - 80
+    environment: 
+      - SERVICE_PORTS=80
+    deploy:
+     replicas: 2
+     update_config:
+       parallelism: 5
+       delay: 10s
+     restart_policy:
+       condition: on-failure
+       max_attempts: 3
+       window: 120s
     container_name: "cathotel_monolith"
-  
+    networks:
+      - web
+
   proxy:
     image: dockercloud/haproxy
     ports: 
       - "80:80"
-    links: 
-      - cathotel_monolith
+    environment: 
+      - BALANCE=leastconn
+    deploy:
+      placement:
+        constraints: [node.role == manager]  
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: "haproxy"
+    networks: 
+      - web
+  
+networks: 
+  web:
+    driver: overlay

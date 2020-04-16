@@ -1,26 +1,52 @@
+networks:
+  web:
+    driver: overlay
 services:
   cathotel_monolith:
     build:
       context: D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith
       dockerfile: Dockerfile
+    container_name: cathotel_monolith
+    deploy:
+      replicas: 20
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+        window: 120s
+      update_config:
+        delay: 10s
+        parallelism: 5
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      SERVICE_Ports: '80'
     image: cathotelmonolith
+    networks:
+      web: {}
     ports:
     - target: 80
-    - target: 8080
   ms-sql-server:
+    container_name: ms-sql-server
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_PID: Express
       SA_PASSWORD: StrongPassword???
     image: mcr.microsoft.com/mssql/server
     ports:
-    - target: 1433
+    - published: 1433
+      target: 1433
   proxy:
-    image: dockercloud/haproxy
-    links:
+    container_name: haproxy
+    depends_on:
     - cathotel_monolith
+    deploy:
+      placement:
+        constraints:
+        - node.role == manager
+    environment:
+      BALANCE: leastconn
+    image: dockercloud/haproxy
+    networks:
+      web: {}
     ports:
     - published: 80
       target: 80
