@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     container_name: cathotel_monolith
     deploy:
-      replicas: 20
+      replicas: 10
       restart_policy:
         condition: on-failure
         max_attempts: 3
@@ -24,6 +24,9 @@ services:
       web: {}
     ports:
     - target: 80
+    - target: 81
+    - target: 82
+    - target: 83
   ms-sql-server:
     container_name: ms-sql-server
     environment:
@@ -31,13 +34,13 @@ services:
       MSSQL_PID: Express
       SA_PASSWORD: StrongPassword???
     image: mcr.microsoft.com/mssql/server
+    networks:
+      web: {}
     ports:
     - published: 1433
       target: 1433
   proxy:
     container_name: haproxy
-    depends_on:
-    - cathotel_monolith
     deploy:
       placement:
         constraints:
