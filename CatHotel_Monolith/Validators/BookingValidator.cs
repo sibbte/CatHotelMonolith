@@ -17,7 +17,6 @@ namespace CatHotel_Monolith.Managers
             RuleFor(x => x.Cats).NotEmpty().WithMessage("At least one cat must bee added to create a booking");
             RuleFor(x => x.Room).NotEmpty().WithMessage("The Room must be sepecified to create the booking");
             RuleFor(x => x.Customer).NotEmpty().WithMessage("The customer must be added to create a booking");
-            //RuleFor(x => x.User).NotEmpty().WithMessage("Users Details must be provided");
             RuleFor(x => x.BookingMade.ToString()).NotEmpty().WithMessage("Booking made on date cant be empty.");
         }
     }
