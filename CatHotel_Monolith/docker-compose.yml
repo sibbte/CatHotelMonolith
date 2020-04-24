@@ -20,12 +20,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - 81
-      - 82
-      - 83
     environment: 
       - SERVICE_PORTS=80
     deploy:
-     replicas: 10
+     replicas: 2
      update_config:
        parallelism: 5
        delay: 10s
