@@ -141,9 +141,5 @@ namespace CatHotel_Monolith.Controllers
                 throw new DataException("");
             }
         }
-
-
-
-
     }
 }
