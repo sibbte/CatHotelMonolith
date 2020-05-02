@@ -571,8 +571,7 @@ namespace CatHotel_Monolith.Models
             {
                 System.Console.WriteLine("Seeding Room Data...");
                 context.Rooms.AddRange(room,room1, room2, room3, room4, room5, room6, room7, room8, room9);
-                System.Console.WriteLine("Seeding Customer Data...");
-                context.Customers.Add(customer);
+
 
                 context.SaveChanges();
             }
