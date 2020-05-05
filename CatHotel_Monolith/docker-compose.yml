@@ -14,16 +14,13 @@ services:
       - web
 
   cathotel_monolith:
-    image: ${DOCKER_REGISTRY-}cathotelmonolith
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: sibby91/cathotelmonolith
     ports:
       - 81
     environment: 
       - SERVICE_PORTS=80
     deploy:
-     replicas: 2
+     replicas: 1
      update_config:
        parallelism: 5
        delay: 10s
