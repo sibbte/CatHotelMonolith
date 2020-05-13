@@ -3,12 +3,9 @@ networks:
     driver: overlay
 services:
   cathotel_monolith:
-    build:
-      context: D:\sibbt\Documents\uni_work\year_3\Semester_2\Final_Year_Project\monolithic_implementation\CatHotel_Monolith
-      dockerfile: Dockerfile
     container_name: cathotel_monolith
     deploy:
-      replicas: 2
+      replicas: 1
       restart_policy:
         condition: on-failure
         max_attempts: 3
@@ -19,7 +16,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       SERVICE_PORTS: '80'
-    image: cathotelmonolith
+    image: sibby91/cathotelmonolith
     networks:
       web: {}
     ports:
